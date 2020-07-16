@@ -18,9 +18,6 @@ class Dashboard extends Component {
           <Route path="/" exact>
             <h1>Dashboard!</h1>
           </Route>
-          <Route path="/pages">
-            <Page />
-          </Route>
           <Route path="/posts">
             <Post />
           </Route>

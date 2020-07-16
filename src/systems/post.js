@@ -10,12 +10,12 @@ export const getdata = () => {
         return fetch('https://jsonplaceholder.typicode.com/posts', requestOptions)
             .then(response => response.json())
             .then(json => dispatch({
-                type: types.PAGE + types.LISTALL,
+                type: types.POST + types.LISTALL,
                 data: json
             }))
             .catch(err => dispatch(
                 {
-                    type: types.PAGE + types.ERROR,
+                    type: types.POST + types.ERROR,
                     error: "Unable to fetch data",
                 }));
 

@@ -1,9 +1,24 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import List from './user/list';
+import Form from './user/form';
 
 class User extends Component {
+
   render() {
-    return <h1>Users!</h1>;
+    return (
+      <div>
+        <Form />
+        <List />
+      </div>
+    );
   }
 }
 
-export default User;
+const mapStateToProps = (state) => {
+  return {
+    user: state.user,
+  }
+};
+
+export default connect(mapStateToProps, null)(User);

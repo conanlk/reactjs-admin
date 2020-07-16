@@ -9,11 +9,15 @@ export const DELETE = 'DELETE';
 export const RESET = 'RESET';
 export const CANCEL = 'CANCEL';
 export const SUBMIT = 'SUBMIT';
-export const SORTBY = 'SORTBY';
+export const SORTBY = {
+    AZ : 'A - Z',
+    ZA : 'Z - A'
+};
 
 // Constants prefix types components
 export const LOGIN = 'LOGIN_';
 export const DASHBOARD = 'DASHBOARD_';
 export const POST = 'POST_';
 export const USER = 'USER_';
+export const ALBUM = 'ALBUM_';
 

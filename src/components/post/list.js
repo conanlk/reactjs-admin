@@ -12,7 +12,7 @@ class List extends Component {
     render() {
         let state = this.props.post;
 
-        let elements = state.pages.map((item, index) =>
+        let elements = state.posts.map((item, index) =>
             <tr key={index}>
                 <td>{index + 1}</td>
                 <td>{item.title}</td>
@@ -26,19 +26,11 @@ class List extends Component {
 
         let grid = state.showform ? '' :
             <div className="row">
-                <div className="col-3">
+                <div className="col-12">
                     <button type="button" className="btn btn-primary " onClick={() => this.props.onadd()}><i className="fa fa-pencil-square-o" aria-hidden="true"></i> Add new</button>
-                </div>
-                <div className="col-9">
-                    <div className="dropdown float-right">
-                        <button className="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">A -Z
-<span className="caret"></span></button>
-                        <ul className="dropdown-menu">
-                            <li><a onClick={() => { this.props.onsort('dasda') }} >A - Z</a></li>
-                            <li><a onClick={() => { this.props.onsort('asdasd') }}  >Z - A</a></li>
-                        </ul>
-                    </div>
-                </div>
+                    <span>&nbsp;</span>
+    <button className="btn btn-primary dropdown-toggle" type="button" onClick={() => this.props.onsort(state.sort === types.SORTBY.AZ ? types.SORTBY.ZA : types.SORTBY.AZ)} >{state.sort}</button>
+                </div>               
                 <hr />
                 <table className="table table-hover">
                     <thead>
@@ -73,11 +65,9 @@ const mapDispatchToProps = (dispatch, props) => {
         listall: () => {
             dispatch(pagefunctions.getdata());
         },
-
         onsort: (sort) => {
             dispatch({
-                type: types.POST + types.SORTBY,
-                sort,
+                type: types.POST + sort,
             });
         },
         onadd: () => {

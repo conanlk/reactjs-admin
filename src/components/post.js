@@ -1,9 +1,24 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import List from './post/list';
+import Form from './post/form';
 
 class Post extends Component {
+
   render() {
-    return <h1>Posts!</h1>;
+    return (
+      <div>
+        <Form />
+        <List />
+      </div>
+    );
   }
 }
 
-export default Post;
+const mapStateToProps = (state) => {
+  return {
+    post: state.post,
+  }
+};
+
+export default connect(mapStateToProps, null)(Post);
