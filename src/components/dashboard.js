@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Header from './../templates/header';
 import Footer from './../templates/footer';
-import Page from './page';
 import Post from './post';
 import User from './user';
 import {

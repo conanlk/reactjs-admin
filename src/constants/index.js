@@ -15,6 +15,5 @@ export const SORTBY = 'SORTBY';
 export const LOGIN = 'LOGIN_';
 export const DASHBOARD = 'DASHBOARD_';
 export const POST = 'POST_';
-export const PAGE = 'PAGE_';
 export const USER = 'USER_';
 

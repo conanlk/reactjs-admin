@@ -14,7 +14,6 @@ class Header extends Component {
       </div>
       <ul className="list-unstyled components">
         <li className={header.component === types.DASHBOARD ? "active" : ""}><Link to="/" onClick={() => this.props.onchange(types.DASHBOARD)}>Home</Link></li>
-        <li className={header.component === types.PAGE ? "active" : ""}><Link to="/pages" onClick={() => this.props.onchange(types.PAGE)}>Pages</Link></li>
         <li className={header.component === types.POST ? "active" : ""}><Link to="/posts" onClick={() => this.props.onchange(types.POST)}>Posts</Link></li>
         <li className={header.component === types.USER ? "active" : ""}><Link to="/users" onClick={() => this.props.onchange(types.USER)}>Users</Link></li>
       </ul>

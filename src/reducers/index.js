@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 import login from './login';
-import page from './page';
+import post from './post';
 import header from './header';
 
 var RootReducer =  combineReducers({
     login,
-    page,
+    post,
     header,
 });
 

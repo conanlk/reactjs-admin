@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as types from './../../constants/index';
-import * as pagefunctions from './../../systems/page';
+import * as pagefunctions from './../../systems/post';
 
 class List extends Component {
 
@@ -10,7 +10,7 @@ class List extends Component {
     }
 
     render() {
-        let state = this.props.page;
+        let state = this.props.post;
 
         let elements = state.pages.map((item, index) =>
             <tr key={index}>
@@ -64,7 +64,7 @@ class List extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        page: state.page,
+        post: state.post,
     }
 };
 
@@ -76,24 +76,24 @@ const mapDispatchToProps = (dispatch, props) => {
 
         onsort: (sort) => {
             dispatch({
-                type: types.PAGE + types.SORTBY,
+                type: types.POST + types.SORTBY,
                 sort,
             });
         },
         onadd: () => {
             dispatch({
-                type: types.PAGE + types.ADD,
+                type: types.POST + types.ADD,
             });
         },
         onedit: (id) => {
             dispatch({
-                type: types.PAGE + types.EDIT,
+                type: types.POST + types.EDIT,
                 id,
             });
         },
         ondelete: (id) => {
             dispatch({
-                type: types.PAGE + types.DELETE,
+                type: types.POST + types.DELETE,
                 id,
             });
         },
