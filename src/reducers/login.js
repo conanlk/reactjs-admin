@@ -2,7 +2,7 @@ import * as types from './../constants/index';
 import *  as loginfunctions from './../systems/login';
 
 const initialState = {
-    status: true,
+    status: sessionStorage.getItem('islogin') === '1' ? true : false,
     username: '',
     password: '',
     error: '',
@@ -22,6 +22,7 @@ var Reducers = (state = initialState, action) => {
                 state.status = true;
                 state.error = '';
             }
+            sessionStorage.setItem('islogin','1');
             return { ...state };
         case types.LOGIN + types.CHANGE:
             state[action.event.target.name] = action.event.target.value;
