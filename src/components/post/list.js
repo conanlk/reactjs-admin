@@ -16,10 +16,12 @@ class List extends Component {
             <tr key={index}>
                 <td>{index + 1}</td>
                 <td>{item.title}</td>
-                <td width="200">
-                    <button type="button" className="btn btn-info" onClick={() => this.props.onedit(item.id)}><i className="fa fa-pencil-square-o" aria-hidden="true"></i> Sửa</button>
+                <td>
+                    <button type="button" className="btn btn-primary" onClick={() => this.props.ondelete(item.id)}><i className="fa fa-list" aria-hidden="true"></i> list</button>
                     <span>&nbsp;</span>
-                    <button type="button" className="btn btn-primary" onClick={() => this.props.ondelete(item.id)}><i className="fa fa-trash-o" aria-hidden="true"></i> Xóa</button>
+                    <button type="button" className="btn btn-info" onClick={() => this.props.onedit(item.id)}><i className="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button>
+                    <span>&nbsp;</span>
+                    <button type="button" className="btn btn-primary" onClick={() => this.props.ondelete(item.id)}><i className="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
                 </td>
             </tr>
         );
@@ -29,15 +31,15 @@ class List extends Component {
                 <div className="col-12">
                     <button type="button" className="btn btn-primary " onClick={() => this.props.onadd()}><i className="fa fa-pencil-square-o" aria-hidden="true"></i> Add new</button>
                     <span>&nbsp;</span>
-    <button className="btn btn-primary dropdown-toggle" type="button" onClick={() => this.props.onsort(state.sort === types.SORTBY.AZ ? types.SORTBY.ZA : types.SORTBY.AZ)} >{state.sort}</button>
-                </div>               
+                    <button className="btn btn-primary dropdown-toggle" type="button" onClick={() => this.props.onsort(state.sort === types.SORTBY.AZ ? types.SORTBY.ZA : types.SORTBY.AZ)} >{state.sort}</button>
+                </div>
                 <hr />
                 <table className="table table-hover">
                     <thead>
                         <tr>
                             <th width="10%">No.</th>
-                            <th width="70%" >Title</th>
-                            <th width="20%">Action</th>
+                            <th width="60%" >Title</th>
+                            <th width="30%">Action</th>
                         </tr>
                     </thead>
                     <tbody>

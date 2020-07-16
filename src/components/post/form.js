@@ -25,7 +25,7 @@ class Form extends Component {
                     <textarea className="form-control" rows="15" name="body" value={state.body} onChange={(event) => { this.props.onchange(event) }}></textarea>
                 </div>
                 <div className="form-group">
-                    <button type="button" className="btn btn-primary" onClick={() => { this.props.onsave() }}>{state.id === '' ? 'Thêm' : 'Sửa'}</button>
+                    <button type="button" className="btn btn-primary" onClick={() => { this.props.onsave() }}>{state.id === '' ? 'Add' : 'Save'}</button>
                     <span>&nbsp;&nbsp;</span>
                     <input type="reset" value="Cancel" className="btn btn-default" onClick={() => this.props.oncancel()} />
                 </div>
